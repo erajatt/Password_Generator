@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply w-full h-14 rounded-lg border-b-[1px] border-b-gray-600 bg-[#191b1e] text-lightText px-4 active:outline-none focus-visible:outline-designColor outline-none focus-visible:border-b-transparent duration-300;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  @apply bg-[#191b1e] text-lightText;
+}
+
+input[type="number"]::-webkit-inner-spin-button:hover {
+  @apply text-designColor;
+}
+
+/* Base checkbox styling */
+.input-checkbox {
+  @apply appearance-none w-5 h-5 rounded border border-gray-600 bg-[#191b1e] cursor-pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Checked state */
+.input-checkbox:checked {
+  @apply bg-[#191b1e] border-designColor;
+}
+
+/* Custom checkmark */
+.input-checkbox:checked::after {
+  content: "✓";
+  @apply text-designColor font-bold text-sm flex items-center justify-center;
+}
+
